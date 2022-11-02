@@ -14,7 +14,7 @@ function Tracking() {
       </div>
       <div className='track flex justify-evenly items-baseline gap-10 h-72'>
         {/* TODO: */}
-        {listTrack.map((item, index) => {
+        {/* {listTrack.map((item, index) => {
           return (
             <article key={index} className='bg-white p-11 rounded-lg'>
               <div className='bg-primary-dark-violet w-[80px] h-[80px] rounded-[50%] flex items-center justify-center -mt-20'>
@@ -28,7 +28,7 @@ function Tracking() {
               </p>
             </article>
           );
-        })}
+        })} */}
       </div>
     </section>
   );
