@@ -13,6 +13,7 @@ function Tracking() {
         </p>
       </div>
       <div className='track flex justify-evenly items-baseline gap-10 h-72'>
+        {/* TODO: */}
         {listTrack.map((item, index) => {
           return (
             <article key={index} className='bg-white p-11 rounded-lg'>

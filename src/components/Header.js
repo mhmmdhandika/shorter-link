@@ -2,7 +2,7 @@ import IllustrationWorking from '../assets/images/illustration-working.svg';
 
 function Header() {
   return (
-    <header className='my-8 py-20 relative section-padding grid grid-cols-2 items-center overflow-hidden'>
+    <header className='my-8 py-5 relative section-padding grid grid-cols-2 items-center overflow-hidden'>
       <div>
         <h1 className='text-neutral-very-dark-violet text-7xl font-bold leading-[5rem]'>
           More than just shorter links
@@ -15,9 +15,9 @@ function Header() {
       </div>
       <img
         src={IllustrationWorking}
-        width={700}
+        width={900}
         alt='Illustration working'
-        className='absolute top-50 -right-20'
+        className='ml-36'
       />
     </header>
   );
