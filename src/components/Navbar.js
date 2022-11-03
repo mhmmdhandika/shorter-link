@@ -5,7 +5,7 @@ function Navbar() {
   const navContent = useRef(null);
   const hamburger = useRef(null);
 
-  const handleHamburger = e => {
+  const handleHamburger = () => {
     navContent.current.classList.toggle('hidden');
     hamburger.current.classList.toggle('hamburger-active');
   };

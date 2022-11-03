@@ -1,7 +1,7 @@
-import IconFacebook from '../assets/images/icon-facebook.svg';
-import IconTwitter from '../assets/images/icon-twitter.svg';
-import IconPinterest from '../assets/images/icon-pinterest.svg';
-import IconInstagram from '../assets/images/icon-instagram.svg';
+import { ReactComponent as IconFacebook } from '../assets/images/icon-facebook.svg';
+import { ReactComponent as IconTwitter } from '../assets/images/icon-twitter.svg';
+import { ReactComponent as IconPinterest } from '../assets/images/icon-pinterest.svg';
+import { ReactComponent as IconInstagram } from '../assets/images/icon-instagram.svg';
 
 const features = [
   { title: 'Features' },
@@ -64,22 +64,22 @@ const company = [
 const icons = [
   {
     name: 'Facebook',
-    icon: IconFacebook,
+    icon: <IconFacebook />,
     url: '#',
   },
   {
     name: 'Twitter',
-    icon: IconTwitter,
+    icon: <IconTwitter />,
     url: '#',
   },
   {
     name: 'Pinterest',
-    icon: IconPinterest,
+    icon: <IconPinterest />,
     url: '#',
   },
   {
     name: 'Instagram',
-    icon: IconInstagram,
+    icon: <IconInstagram />,
     url: '#',
   },
 ];

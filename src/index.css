@@ -61,5 +61,9 @@
 }
 
 .footer-section ul li {
-  @apply my-3 text-sm text-neutral-gray;
+  @apply my-3 text-sm text-neutral-gray hover:text-primary-cyan hover:font-bold;
+}
+
+.footer-section ul li a {
+  @apply text-white hover:text-primary-cyan;
 }

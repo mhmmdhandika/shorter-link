@@ -48,11 +48,10 @@ function Footer() {
       <div className='footer-section'>
         <ul className='flex items-center gap-5'>
           {icons.map((item, index) => {
+            console.log(item.icon);
             return (
               <li key={index}>
-                <a href={item.url}>
-                  <img src={item.icon} alt='' />
-                </a>
+                <a href={item.url}>{item.icon}</a>
               </li>
             );
           })}
