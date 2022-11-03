@@ -7,7 +7,7 @@ function Tracking() {
         <h1 className='font-bold text-4xl text-primary-dark-violet'>
           Advanced Statistics
         </h1>
-        <p className='text-neutral-grayfish-violet w-[400px] mx-auto my-4'>
+        <p className='text-neutral-grayfish-violet w-full mx-auto my-4 lg:w-[400px]'>
           Track how your links are performing across the web with our advanced
           statictics dashboard.
         </p>
