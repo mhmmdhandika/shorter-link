@@ -5,12 +5,11 @@ function Header() {
     <header className='mt-8 mb-44 section-padding text-center flex flex-col gap-5 items-center overflow-hidden lg:text-start lg:flex-row'>
       <img
         src={IllustrationWorking}
-        // width={850}
         alt='Illustration working'
         className='-mr-44 sm:w-[600px] lg:order-last'
       />
       <div className='mt-6'>
-        <h1 className='grow text-neutral-very-dark-violet text-[3.3rem] font-bold leading-[3.7rem] lg:leading-[5rem] lg:text-7xl'>
+        <h1 className='grow text-neutral-very-dark-violet text-[2.5rem] font-bold leading-[3.7rem] lg:leading-[5rem] lg:text-7xl'>
           More than just shorter links
         </h1>
         <p className='text-neutral-grayfish-violet my-4 text-xl'>

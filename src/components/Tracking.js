@@ -12,7 +12,7 @@ function Tracking() {
           statictics dashboard.
         </p>
       </div>
-      <div className='track text-center flex flex-col justify-center items-baseline gap-20 lg:flex-row lg:gap-10 lg:h-72'>
+      <div className='track text-center flex flex-col justify-center items-baseline gap-20 lg:flex-row lg:gap-10 lg:h-72 lg:text-start'>
         {listTrack.map((item, index) => {
           return (
             <article key={index} className='bg-white p-11 rounded-lg'>

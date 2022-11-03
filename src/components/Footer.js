@@ -2,9 +2,9 @@ import { features, resources, company, icons } from '../data/footer';
 
 function Footer() {
   return (
-    <footer className='section-padding bg-neutral-very-dark-violet text-white flex justify-between py-28'>
+    <footer className='section-padding bg-neutral-very-dark-violet text-white text-center flex flex-col justify-between items-center gap-8 py-28 lg:text-start lg:flex-row lg:items-start'>
       {/* Footer title */}
-      <h1 className='font-bold text-2xl'>Shortly</h1>
+      <h1 className='font-bold text-4xl'>Shortly</h1>
       {/* Features */}
       <div className='footer-section'>
         <h2>{resources[0].title}</h2>
@@ -46,7 +46,7 @@ function Footer() {
       </div>
       {/* Icons */}
       <div className='footer-section'>
-        <ul className='flex gap-5'>
+        <ul className='flex items-center gap-5'>
           {icons.map((item, index) => {
             return (
               <li key={index}>
