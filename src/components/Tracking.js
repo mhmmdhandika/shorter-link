@@ -12,13 +12,14 @@ function Tracking() {
           statictics dashboard.
         </p>
       </div>
-      <div className='track flex justify-evenly items-baseline gap-10 h-72'>
-        {/* TODO: */}
-        {/* {listTrack.map((item, index) => {
+      <div className='track text-center flex flex-col justify-center items-baseline gap-20 lg:flex-row lg:gap-10 lg:h-72'>
+        {listTrack.map((item, index) => {
           return (
             <article key={index} className='bg-white p-11 rounded-lg'>
-              <div className='bg-primary-dark-violet w-[80px] h-[80px] rounded-[50%] flex items-center justify-center -mt-20'>
-                <img src={item.icon} alt='Track icon' />
+              <div className='-mt-20 flex justify-center lg:justify-start'>
+                <div className='bg-primary-dark-violet w-[80px] h-[80px] rounded-[50%] flex items-center justify-center'>
+                  <img src={item.icon} alt='Track icon' />
+                </div>
               </div>
               <h1 className='my-4 text-neutral-very-dark-violet font-semibold text-xl'>
                 {item.name}
@@ -28,7 +29,7 @@ function Tracking() {
               </p>
             </article>
           );
-        })} */}
+        })}
       </div>
     </section>
   );
