@@ -67,3 +67,12 @@
 .footer-section ul li a svg {
   @apply text-white hover:text-primary-cyan;
 }
+
+/* swal components */
+.swal-button {
+  @apply bg-primary-cyan;
+}
+
+.swal-text {
+  @apply text-center;
+}

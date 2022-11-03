@@ -23,7 +23,7 @@ function Navbar() {
         <span></span>
       </button>
       <div
-        className='hidden grow text-lg text-center text-white absolute top-20 p-10 left-7 right-7 bg-primary-dark-violet rounded-xl lg:text-sm lg:p-0 lg:text-neutral-grayfish-violet lg:flex lg:bg-transparent lg:static justify-between items-center'
+        className='hidden grow text-lg text-center text-white absolute top-24 p-10 left-7 right-7 bg-primary-dark-violet rounded-xl lg:text-sm lg:p-0 lg:text-neutral-grayfish-violet lg:flex lg:bg-transparent lg:static justify-between items-center'
         ref={navContent}
       >
         <ul className='mr-auto flex flex-col gap-y-6 cursor-pointer lg:flex-row lg:gap-x-6 lg:text-sm'>
