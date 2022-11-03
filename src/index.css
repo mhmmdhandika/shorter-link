@@ -64,6 +64,6 @@
   @apply my-3 text-sm text-neutral-gray hover:text-primary-cyan hover:font-bold;
 }
 
-.footer-section ul li a {
+.footer-section ul li a svg {
   @apply text-white hover:text-primary-cyan;
 }
