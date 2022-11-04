@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { ReactComponent as Logo } from '../assets/images/logo.svg';
 import pagesList from '../data/pages.json';
 
 function Navbar() {
@@ -11,8 +12,12 @@ function Navbar() {
   };
 
   return (
-    <nav className='section-padding bg-white sticky top-0 z-50 w-full font-bold text-[1.125rem] py-5 lg:py-9 flex justify-between items-center gap-x-20'>
-      <h1 className='font-bold text-primary-dark-violet text-3xl'>Shortly</h1>
+    <nav className='section-padding bg-white sticky top-0 z-50 font-bold text-[1.125rem] py-5 lg:py-9 flex justify-between items-center gap-x-20'>
+      <Logo
+        className='text-primary-dark-violet'
+        width={122}
+        viewBox='0 0 145 33'
+      />
       <button
         className='hamburger-icon'
         onClick={handleHamburger}

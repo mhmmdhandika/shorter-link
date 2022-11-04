@@ -12,7 +12,7 @@ function Header() {
         <h1 className='grow text-neutral-very-dark-violet text-[2.5rem] font-bold leading-[3.7rem] lg:leading-[5rem] lg:text-7xl'>
           More than just shorter links
         </h1>
-        <p className='text-neutral-grayfish-violet my-4 text-xl'>
+        <p className='text-neutral-grayfish-violet my-4 text-xl lg:w-[70%]'>
           Build your brand's recognition and get detailed insights on how your
           links are performing.
         </p>

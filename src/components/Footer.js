@@ -1,10 +1,13 @@
+import { ReactComponent as Logo } from '../assets/images/logo.svg';
 import { features, resources, company, icons } from '../data/footer';
 
 function Footer() {
   return (
     <footer className='section-padding bg-neutral-very-dark-violet text-white text-center flex flex-col justify-between items-center gap-8 py-28 lg:text-start lg:flex-row lg:items-start'>
       {/* Footer title */}
-      <h1 className='font-bold text-4xl'>Shortly</h1>
+      <span className='text-4xl'>
+        <Logo />
+      </span>
       {/* Features */}
       <div className='footer-section'>
         <h2>{resources[0].title}</h2>
