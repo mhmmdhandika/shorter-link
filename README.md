@@ -1,5 +1,9 @@
 # Shorter Link
 
+This is challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G).
+
+## Tools and others
+
 1. [React Js](https://reactjs.org/)
 2. [Tailwind CSS](https://tailwindcss.com/)
 3. [Design reference](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G)
