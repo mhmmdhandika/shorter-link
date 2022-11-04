@@ -1,20 +1,19 @@
 function checkWebStorage() {
   if (typeof Storage !== 'undefined') {
-    return false;
+    return true;
   }
-  return true;
+  return false;
 }
 
-function loadLinksFromSessionStorage(key, data, setData) {
-  if (sessionStorage.getItem(key)) {
-    const loadLinks = sessionStorage.getItem(key);
+function loadLinksFromLocalStorage(key, data, setData) {
+  const loadLinks = localStorage.getItem(key);
+  if (loadLinks === null) {
+    const convertedToJSON = JSON.stringify(data);
+    localStorage.setItem(key, convertedToJSON);
+  } else {
     const parsedFromJSON = JSON.parse(loadLinks);
     setData(parsedFromJSON);
-    console.log(parsedFromJSON);
-  } else {
-    const convertedToJSON = JSON.stringify(data);
-    sessionStorage.setItem(key, convertedToJSON);
   }
 }
 
-export { checkWebStorage, loadLinksFromSessionStorage };
+export { checkWebStorage, loadLinksFromLocalStorage };

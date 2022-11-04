@@ -5,3 +5,4 @@
 3. [Design reference](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G)
 4. [shrtcode](https://shrtco.de/)
 5. [Sweet Alert](https://sweetalert.js.org/)
+6. [useStateWithCallback](https://betterprogramming.pub/synchronous-state-in-react-using-hooks-dc77f43d8521)

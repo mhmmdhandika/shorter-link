@@ -37,7 +37,7 @@ function Shorten() {
       });
   };
 
-  const fetchData = e => {
+  const getShortLink = e => {
     e.preventDefault();
     if (inputLink === '') {
       swal({
@@ -46,26 +46,31 @@ function Shorten() {
         text: 'Please provide at least 1 URL',
       });
     } else {
-      try {
-        fetch(`${baseAPI}shorten?url=${inputLink}`)
-          .then(res => res.json())
-          .then(data => {
-            if (data.ok) {
-              setLinks([...links, data.result]);
-              const convertToJSON = JSON.stringify(links);
-              localStorage.setItem(KEY_LINKS_STORAGE, convertToJSON);
-            } else {
-              swal({
-                icon: 'error',
-                title: "Something's wrong",
-                text: data.error,
-              });
-            }
+      async function fetchData() {
+        const fetchAPI = await fetch(`${baseAPI}shorten?url=${inputLink}`);
+        const data = await fetchAPI.json();
+
+        if (data.ok) {
+          setLinks([...links, data.result], (prevValue, newValue) => {
+            const convertedToJSON = JSON.stringify(newValue);
+            localStorage.setItem(KEY_LINKS_STORAGE, convertedToJSON);
           });
-      } catch (err) {
+        } else {
+          swal({
+            icon: 'error',
+            title: "Something's wrong",
+            text: data.error,
+          });
+        }
+      }
+
+      try {
+        fetchData();
+      } catch (error) {
         swal({
           icon: 'error',
-          text: err,
+          title: 'Error',
+          text: error,
         });
       }
     }
@@ -102,7 +107,7 @@ function Shorten() {
         <button
           type='submit'
           className='min-w-[200px] w-full primary-button border-2 border-primary-cyan rounded-lg lg:rounded-xl lg:flex-1'
-          onClick={fetchData}
+          onClick={getShortLink}
         >
           Shorten it!
         </button>
