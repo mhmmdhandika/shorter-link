@@ -8,6 +8,31 @@ function Shorten() {
   const { links, setLinks } = useContext(LinkContext);
   const [inputLink, setInputLink] = useState('');
   const [formState, setFormState] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
+
+  const copyTextToClipboard = async text => {
+    if ('clipboard' in navigator) {
+      return await navigator.clipboard.writeText(text);
+    }
+    return document.execCommand('copy', true, text);
+  };
+
+  const handleCopyClick = textCopy => {
+    copyTextToClipboard(textCopy)
+      .then(() => {
+        setIsCopied(true);
+        setTimeout(() => {
+          setIsCopied(false);
+        }, 2000);
+      })
+      .catch(err => {
+        swal({
+          icon: 'error',
+          title: "Something's wrong",
+          text: err,
+        });
+      });
+  };
 
   const fetchData = e => {
     e.preventDefault();
@@ -84,11 +109,24 @@ function Shorten() {
             key={index}
           >
             <div className='prev-link'>{item.original_link}</div>
-            <div className='shorted-link text-primary-cyan grow text-end'>
+            <div
+              className='shorted-link text-primary-cyan grow text-end'
+              onCopy={() => {
+                setIsCopied(true);
+                setTimeout(() => {
+                  setIsCopied(false);
+                }, 2000);
+              }}
+            >
               {item.full_short_link}
             </div>
-            <button className='copy-link primary-button w-full rounded-lg lg:rounded-xl lg:w-[120px]'>
-              Copy
+            <button
+              className={`copy-link primary-button w-full rounded-lg lg:rounded-xl lg:w-[120px] ${
+                isCopied && 'bg-primary-dark-violet text-white'
+              }`}
+              onClick={() => handleCopyClick(item.full_short_link)}
+            >
+              {isCopied ? 'Copied!' : 'Copy'}
             </button>
           </div>
         );
