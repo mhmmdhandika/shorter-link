@@ -5,10 +5,13 @@ import { LinkContext } from '../App';
 const baseAPI = 'https://api.shrtco.de/v2/';
 
 function Shorten() {
-  const { links, setLinks } = useContext(LinkContext);
+  const { KEY_LINKS_STORAGE, links, setLinks } = useContext(LinkContext);
   const [inputLink, setInputLink] = useState('');
   const [formState, setFormState] = useState(false);
-  const [isCopied, setIsCopied] = useState(false);
+  const [copyText, setCopyText] = useState({
+    isCopied: false,
+    text: '',
+  });
 
   const copyTextToClipboard = async text => {
     if ('clipboard' in navigator) {
@@ -20,9 +23,9 @@ function Shorten() {
   const handleCopyClick = textCopy => {
     copyTextToClipboard(textCopy)
       .then(() => {
-        setIsCopied(true);
+        setCopyText({ text: textCopy, isCopied: true });
         setTimeout(() => {
-          setIsCopied(false);
+          setCopyText({ textCopy: '', isCopied: false });
         }, 2000);
       })
       .catch(err => {
@@ -39,7 +42,7 @@ function Shorten() {
     if (inputLink === '') {
       swal({
         icon: 'warning',
-        title: 'Empty input',
+        title: 'Empty url input',
         text: 'Please provide at least 1 URL',
       });
     } else {
@@ -49,6 +52,8 @@ function Shorten() {
           .then(data => {
             if (data.ok) {
               setLinks([...links, data.result]);
+              const convertToJSON = JSON.stringify(links);
+              localStorage.setItem(KEY_LINKS_STORAGE, convertToJSON);
             } else {
               swal({
                 icon: 'error',
@@ -112,9 +117,9 @@ function Shorten() {
             <div
               className='shorted-link text-primary-cyan grow text-end'
               onCopy={() => {
-                setIsCopied(true);
+                setCopyText({ ...copyText, isCopied: true });
                 setTimeout(() => {
-                  setIsCopied(false);
+                  setCopyText({ ...copyText, isCopied: false });
                 }, 2000);
               }}
             >
@@ -122,11 +127,12 @@ function Shorten() {
             </div>
             <button
               className={`copy-link primary-button w-full rounded-lg lg:rounded-xl lg:w-[120px] ${
-                isCopied && 'bg-primary-dark-violet text-white'
+                copyText.text === item.full_short_link &&
+                'bg-primary-dark-violet text-white'
               }`}
               onClick={() => handleCopyClick(item.full_short_link)}
             >
-              {isCopied ? 'Copied!' : 'Copy'}
+              {copyText.text === item.full_short_link ? 'Copied!' : 'Copy'}
             </button>
           </div>
         );
